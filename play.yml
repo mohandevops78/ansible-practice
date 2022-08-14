@@ -1,0 +1,19 @@
+---
+- name: "Play 1"
+  hosts: web
+  become: true
+  tasks:
+    - name: "Task 1"
+      apt:
+        name: nginx
+        state: present
+    
+    - name: "Task 2"
+      command: "touch /tmp/newfile"
+
+- name: "Play 2"
+  hosts: web
+  tasks:
+    - name: "Task 1"
+      command: "touch /tmp/new"
+

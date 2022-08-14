@@ -1,0 +1,4 @@
+---
+# defaults file for myrole
+# We use this diretory to store fixed variables
+mvn_base_url: "maven.org/download/"

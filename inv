@@ -1,0 +1,24 @@
+web1 ansible_host=13.208.206.173 ansible_user=ubuntu ansible_port=22
+web2 ansible_host=3.84.128.234 ansible_user=ubuntu
+db1 ansible_host=35.170.191.11 ansible_user=ansible
+db2 ansible_host=18.144.47.207 ansible_user=ubuntu
+
+[web]
+web1
+web2
+
+[db]
+db1
+db2
+
+[dev]
+web1
+db1
+
+[prod]
+web2
+db2
+
+[master:children]
+dev
+prod

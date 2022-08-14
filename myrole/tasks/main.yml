@@ -1,0 +1,14 @@
+---
+- name: "Install Nginx on APT"
+  include: install_ubuntu.yml
+  when: ansible_os_family=="Debian"
+
+- name: "Install Nginx on RedHat"
+  include: install_redhat.yml
+  when: ansible_os_family=="RedHAT"
+
+- name: "Configure Nginx"
+  include: configuration.yml
+
+- name: "Start Nginx Service"
+  include: service.yml

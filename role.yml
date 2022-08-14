@@ -1,0 +1,5 @@
+- name: "Calling my Nginx Role"
+  hosts: web1
+  become: true
+  roles:
+    - myrole
