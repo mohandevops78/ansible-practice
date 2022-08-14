@@ -1,0 +1,15 @@
+
+    
+- name: "Copying Index.html file"
+  copy:
+    src: index.html
+    dest: /var/www/html/index.nginx-debian.html
+  notify:
+    - "Restart Nginx"
+
+- name: "Updating Default Nginx PORT"
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/default
+  notify:
+    - "Restart Nginx"
